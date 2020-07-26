@@ -1,0 +1,71 @@
+.panel-control:checked + label {
+  background-color: #fff;
+}
+
+.panel-group .content {
+  /* 淡入效果
+  width: 0;
+  height: 0;
+  padding: 0; */
+
+  /* 變透明但是東西還在唷，需要配合 overflow hidden ! */
+  /* opacity: 0; */
+
+  /* 將流出文本的地方隱藏 */
+  /* overflow: hidden; */
+
+  /* transition: opacity .1s; */
+
+  /**
+    使用絕對定位就沒有寬、高
+    內容高度就無法自適應
+  */
+  display: none;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.panel-control:checked + label + .content {
+  display: block;
+  /**
+    淡入效果會短暫看到 .content border-top 消失
+    視覺上體驗不好，所以使用原本 display none block
+  */
+  /* 淡入效果 
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  opacity: 1; */
+}
+
+.panel-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel-group input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.panel-group label {
+  /* 調整併排 */
+  order: -1;
+
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  margin-right: 5px;
+  background-color: #ccc;
+
+  /* checked 蓋掉 content border-top 的線 */
+  position: relative;
+  bottom: -1px;
+
+  /* 增加 user 體驗 */
+  cursor: pointer;
+}
