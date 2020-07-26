@@ -6,7 +6,7 @@
 
 ## Example
 
-https://github.com/HedgehogKUCC/CSS-checked
+https://hedgehogkucc.github.io/CSS-checked/index.html
 
 <br>
 
